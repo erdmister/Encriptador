@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <header class="header">
+        <img class="logo" src="img/logo.png" alt="Logo empresa">
+        <h1 class="titulo">Encriptador</h1>
+        <img class="dark-mode-boton" src="img/dark-mode.svg">
+    </header>
+
+    
+    <main class="contenedor">
+        <div class="botones">
+            <button onclick="cifrarTexto()" class="btn">Cifrar</button> 
+            <button onclick="limpiarCaja()" class="btn">Limpiar</button> 
+            <button onclick="descifrarTexto()" class="btn">Descifrar</button> 
+        </div>
+    
+        <div class="cuadros">
+            <div class="escribir">
+                <textarea class="borrar" id="textoIn" placeholder="Escribe aquí tu mensaje..."></textarea>
+            </div>
+            <div class="encriptado">
+                <div class="texto">
+                    <p class="salidaTexto borrar"><span>Resultado</span></p>
+                </div>
+            </div>
+        </div>
+    
+        <div class="copiar-container"> 
+            <button onclick="copiarTexto()" class="btn copiar" style="display: none;">Copiar</button>
+        </div>
+        <div id="alerta" class="notificacion">Traducción copiada</div>
+    </main>
+    <footer class="footer">
+        <p class="footer__texto"> Encriptador. Todos los derechos Reservados 2023. </p>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>

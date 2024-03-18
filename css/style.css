@@ -1,0 +1,233 @@
+:root {
+    --azulFuerte: #0A3871;
+    --blanco: #fff;
+    --gris: #F1F2F3;
+    --colorFondo: #f2f4fb;
+    --darkFondo: #111827;
+}
+
+
+
+/** GLOBALES **/
+html, .cuadros {
+    font-size: 62.5%; /* 1rem = 10px */
+    box-sizing: border-box;
+}
+.contenedor {
+    width: 87%;
+    max-width: 160rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@media (min-width: 768px) {
+    .contenedor {
+        width: 92%;
+    }
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+    background-color: var(--colorFondo);
+}
+main {
+    flex: 1; /* Hace que el contenido principal ocupe todo el espacio disponible */
+}
+
+/* Tipologia */
+p {
+    margin-top: 0;
+}
+h1 {
+    text-align: center;
+}
+
+
+
+/** BODY **/
+
+/* Header */
+.header {
+    width: 87%;
+    max-width: 160rem;
+    margin: 2rem auto; /* Margen superior e inferior de rem, y centrado horizontalmente */
+    padding: 0 1rem; /* Agregar un poco de espacio entre los elementos */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribuir los elementos horizontalmente */
+    
+}
+.titulo {
+    background: #121FCF;
+    background: linear-gradient(to right, #121FCF 0%, #CF1512 100%);
+    -webkit-background-clip: text;
+    background-clip: text; /* Propiedad estándar */
+    -webkit-text-fill-color: transparent;
+    font-size: 4rem; /* Tamaño de fuente ajustado */
+}
+
+.dark-mode-boton {
+    width: 3rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+    .header {
+        margin: 1rem auto;
+        width: 92%;
+        margin-bottom: 2rem;
+    }
+    .titulo {
+        font-size: 5rem;
+    }
+}
+
+
+/* Main*/
+.botones {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: fit-content;
+    margin-bottom: 3rem;
+}
+.btn {
+    width: 25%;
+    background-color: var(--azulFuerte);
+    color: var(--blanco);
+    border: none;
+    font-size: 1.5rem;
+    padding: .5rem;
+    cursor: pointer;
+}
+@media (min-width: 768px) {
+    .btn {
+        width: 16rem;
+    }
+}
+
+.cuadros {
+    font-size: 2rem;
+    width: 100%;
+}
+.escribir {
+    margin-bottom: 2rem;
+}
+textarea, .encriptado {
+    width: 100%;
+    height: 20rem;
+    padding: 1.5rem;
+    margin: 0;
+    resize: none;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+@media (min-width: 768px) {
+    .cuadros {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 2rem;
+    }
+
+    .escribir {
+        margin-bottom: 0;
+    }
+}
+
+.encriptado {
+    background-color: var(--blanco);
+    border: 1px solid #8f8f9d; 
+    border-radius: 5px; /* Esquinas redondeadas */
+    padding: 10px; /* Añadir relleno para que el contenido no esté pegado al borde */
+}
+.salidaTexto {
+    position: relative;
+}
+.salidaTexto span {
+    color: #999; 
+    pointer-events: none; 
+}
+.salidaTexto::before {
+    content: attr(data-placeholder); /* Usar el atributo data-placeholder como contenido */
+    color: transparent; 
+    position: absolute; /* Posicionar el marcador de posición sobre el span */
+    top: 50%; /* Alinear verticalmente al centro */
+    transform: translateY(-50%); /* Ajustar posición vertical */
+    left: 0; 
+    pointer-events: none; /* Evitar eventos de puntero en el marcador de posición */
+}
+
+
+/* boton copiar */
+.copiar-container {
+    width: 100%;
+    display: grid;
+    place-items: end;
+    margin-top: 2rem;
+}
+.copiar {
+    display: none; /* Oculta el botón de copiar inicialmente */
+}
+
+.notificacion {
+    /* position: fixed; para que aparesca abajo...
+    bottom: 2rem;
+    left: 2rem; */
+    margin-top: 2rem;
+    width: 20rem; /* Modifica el ancho de la notificación */
+    padding: 1rem 2rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: var(--blanco);
+    border-radius: 0.5rem;
+    z-index: 9999;
+    display: none; /* Oculta la notificación inicialmente */
+    text-align: center; /* Centra el texto horizontalmente */
+    font-size: 1.5rem;
+}
+@media (min-width: 768px) {
+    .notificacion{
+        margin-top: 5rem;
+    }
+}
+
+/* Footer */
+.footer{
+    background-color: var(--gris);
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+.footer__texto{
+    font-family: var(--funtePrincipal);
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+/** DARK-MODE */
+.dark-mode {
+    background-color: var(--darkFondo);
+    color: var(--blanco); /* Cambiar el color del texto a blanco en modo oscuro */
+    textarea{
+        color: var(--blanco);
+    }
+}
+
+.dark-mode .encriptado,
+.dark-mode textarea,
+.dark-mode .footer {
+    background-color: var(--darkFondo);
+}
+
+.dark-mode .footer {
+    color: var(--blanco);
+}
+
+.dark-mode .dark-mode-boton {
+    filter: invert(100%);
+}
+
+
+
