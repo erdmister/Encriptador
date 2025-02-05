@@ -47,3 +47,11 @@ Este es un encriptador de texto desarrollado en HTML, CSS y JavaScript. Permite 
 7. Usar el botón "Copiar" para guardar el resultado en el portapapeles.
 
 9. Oprimir "Limpiar" para borrar el texto ingresado y el resultado.
+
+## Imagenes
+![cap_1](https://github.com/user-attachments/assets/2fa480c6-a429-4b95-9305-980918013b5e)
+![cap_2](https://github.com/user-attachments/assets/dc48dcd0-1708-4041-9226-18d3ce41bf39)
+![cap_3](https://github.com/user-attachments/assets/1be64064-4890-46e7-bfe9-60e1cabf32f4)
+![cap_4](https://github.com/user-attachments/assets/9f7b5716-7e1e-4033-aca3-c8d4f7cc99b2)
+
+
